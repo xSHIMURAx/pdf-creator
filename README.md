@@ -1,6 +1,6 @@
 # ConvertidorPDF (Electron)
 
-![Vista principal](screenshots/Principal.png)
+![Vista principal](Screenshots/Principal.png)
 
 Reescritura completa de `ConvertidorPDF.ps1` (PowerShell + Windows Forms) a
 Electron, con la misma estructura de proyecto que YT-DLP Minimalist
