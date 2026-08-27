@@ -58,7 +58,7 @@ soporta la sintaxis usada aca). Con esto aparece una opcion
 seleccionados, junto a otras herramientas como FFmpeg o ImageMagick si ya
 las tenes integradas.
 
-En `contextmenu/app_PDFCreator.nss` esta el script listo para usar:
+En [`contextmenu/app_PDFCreator.nss`](contextmenu/app_PDFCreator.nss) esta el script listo para usar:
 
 ```
 item(title='Convertir a PDF...' type='file|dir|back.dir' mode='multiple' image=image.res('C:\Program Files\PDF Creator\PDF Creator.exe', 0)
@@ -80,6 +80,8 @@ item(title='Convertir a PDF...' type='file|dir|back.dir' mode='multiple' image=i
 
 Una vez activo, podes seleccionar una o varias imagenes (o una carpeta, comprimido) y
 elegir "Convertir a PDF..." directamente desde el clic derecho.
+
+
   ## Requisitos para compilarla tu mismo
 
 - [Node.js](https://nodejs.org) 18 o superior
