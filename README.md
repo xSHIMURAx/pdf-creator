@@ -49,6 +49,37 @@ El armado del PDF lo hace `pdf-lib` (tambien npm, sin binarios externos).
   Linux, etc. — en esos casos se ve un fondo oscuro solido normal, sin
   romper nada).
 
+## Integracion con el menu contextual (Nilesoft Shell, version Canary)
+
+PDF Creator se puede agregar al menu contextual de Windows usando
+[Nilesoft Shell](https://nilesoft.org/) (**version Canary**, que es la que
+soporta la sintaxis usada aca). Con esto aparece una opcion
+**"Convertir a PDF..."** al hacer clic derecho sobre archivos o carpetas
+seleccionados, junto a otras herramientas como FFmpeg o ImageMagick si ya
+las tenes integradas.
+
+En `contextmenu/app_PDFCreator.nss` esta el script listo para usar:
+
+```
+item(title='Convertir a PDF...' type='file|dir|back.dir' mode='multiple' image=image.res('C:\Program Files\PDF Creator\PDF Creator.exe', 0)
+	tip='Convierte imagenes seleccionadas a un unico PDF con la app Convertidor a PDF'
+	cmd='C:\Program Files\PDF Creator\PDF Creator.exe' arg=sel(true," "))
+```
+
+### Como instalarlo
+
+1. Instala **Nilesoft Shell Canary** (no la version estable, esta sintaxis
+   requiere Canary).
+2. Copia `contextmenu/app_PDFCreator.nss` a la carpeta de imports de Shell
+   (normalmente `C:\Program Files\Nilesoft Shell\imports\`).
+3. Asegurate de que la ruta del `.exe` en el script (`C:\Program Files\PDF
+   Creator\PDF Creator.exe`) coincida con donde instalaste PDF Creator; si
+   la cambiaste durante la instalacion, edita esa linea.
+4. Reinicia el explorador de Windows (o ejecuta `shell.reload` desde Shell)
+   para que el nuevo item aparezca en el menu contextual.
+
+Una vez activo, podes seleccionar una o varias imagenes (o una carpeta, comprimido) y
+elegir "Convertir a PDF..." directamente desde el clic derecho.
   ## Requisitos para compilarla tu mismo
 
 - [Node.js](https://nodejs.org) 18 o superior
