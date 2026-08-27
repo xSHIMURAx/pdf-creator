@@ -82,7 +82,7 @@ Una vez activo, podes seleccionar una o varias imagenes (o una carpeta, comprimi
 elegir "Convertir a PDF..." directamente desde el clic derecho.
 
 
-  ## Requisitos para compilarla tu mismo
+  ## Requisitos para compilarlo tu mismo
 
 - [Node.js](https://nodejs.org) 18 o superior
 
