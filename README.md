@@ -1,4 +1,4 @@
-# ConvertidorPDF (Electron)
+# PDF Creator (Electron)
 
 ![Vista principal](Screenshots/Principal.png)
 
