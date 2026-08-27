@@ -1,0 +1,43 @@
+{
+  "name": "convertidor-pdf",
+  "version": "1.0.0",
+  "description": "ConvertidorPDF — versión de escritorio (Electron), reescritura de la app PowerShell/WinForms original",
+  "main": "src/main.js",
+  "author": "✿ S H I M U R A ✿",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4",
+    "pdf-lib": "^1.17.1",
+    "adm-zip": "^0.5.14"
+  },
+  "build": {
+    "appId": "com.tuusuario.convertidorpdf",
+    "productName": "PDF Creator",
+    "copyright": "© ✿ S H I M U R A ✿",
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ]
+  }
+}

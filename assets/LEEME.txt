@@ -1,0 +1,5 @@
+Poné acá tu icon.ico antes de correr "npm run dist" (electron-builder lo
+usa para el .exe, ver "win.icon" en package.json).
+
+Si todavía no tenés un .ico, sacá la línea "icon": "assets/icon.ico" de
+package.json para que compile igual, sin ícono personalizado.

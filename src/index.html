@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>PDF Creator</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ventana">
+  <div class="titulo">
+    <img class="titulo-icono" src="../assets/icon.ico" alt="" />
+    <span>PDF Creator</span>
+    <div class="titulo-botones">
+      <div class="opciones-envoltorio">
+        <button id="btnOpciones" class="btn-titulo" title="Opciones">&#x2699;</button>
+        <div id="panelOpciones" class="panel-opciones oculto">
+          <div class="panel-opciones-titulo">Transparencia</div>
+          <div class="fila-calidad">
+            <input id="rangoTransparencia" type="range" min="20" max="100" value="80" />
+            <span id="valorTransparencia">80%</span>
+          </div>
+          <div class="panel-opciones-titulo panel-opciones-espaciado">Desenfoque</div>
+          <div class="fila-nivel-blur" id="filaNivelBlur">
+            <button type="button" class="btn-nivel-blur activo" data-nivel="ninguno">Ninguno</button>
+            <button type="button" class="btn-nivel-blur" data-nivel="acrilico">Acrilico</button>
+          </div>
+        </div>
+      </div>
+      <button id="btnMin" class="btn-titulo" title="Minimizar">&#x2212;</button>
+      <button id="btnClose" class="btn-titulo btn-titulo-cerrar" title="Cerrar">&#x2715;</button>
+    </div>
+  </div>
+
+  <div class="contenedor">
+
+    <div class="panel">
+      <div class="panel-titulo">Carpeta de imagenes</div>
+      <div class="fila-carpeta">
+        <input id="txtCarpeta" type="text" readonly placeholder="Ninguna carpeta seleccionada" />
+        <button id="btnCarpeta">Examinar</button>
+        <button id="btnAgregarCarpeta" class="secundario">+ Carpeta</button>
+      </div>
+      <label class="check etiqueta-tooltip">
+        <input id="chkSubcarpetas" type="checkbox" />
+        Incluir subcarpetas (usa el nombre de la carpeta raiz para el PDF)
+        <span class="tooltip-caja">
+          Busca imagenes dentro de todas las subcarpetas de la carpeta seleccionada (por ejemplo, una carpeta por capitulo) y las agrega en orden. El PDF tomara el nombre de la carpeta raiz que selecciones.
+        </span>
+      </label>
+    </div>
+
+    <div class="panel">
+      <div class="fila-contador">
+        <span class="panel-titulo">Imagenes (orden de pagina)</span>
+        <div class="fila-contador-derecha">
+          <span id="lblContador">Imagenes agregadas: 0 imagenes</span>
+          <button id="btnMiniaturas" class="secundario chico">Lista</button>
+        </div>
+      </div>
+      <div id="listaImagenes" class="lista oculto"></div>
+      <div id="gridMiniaturas" class="grid"></div>
+      <div class="fila-botones-lista">
+        <button id="btnSubir" class="secundario">Subir</button>
+        <button id="btnBajar" class="secundario">Bajar</button>
+        <button id="btnQuitar" class="secundario">Quitar</button>
+        <button id="btnQuitarTodo" class="secundario">Quitar todo</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-titulo">Opciones</div>
+
+      <label class="etiqueta">Nombre del PDF (opcional)</label>
+      <input id="txtNombrePDF" type="text" placeholder="Vacio = nombre de la carpeta" />
+
+      <div class="fila-calidad">
+        <label class="etiqueta etiqueta-tooltip etiqueta-calidad">
+          Calidad de imagen (1-100)
+          <span class="tooltip-caja">
+            Calidad de compresión JPEG de cada página.<br />
+            Más baja = archivo más liviano pero con más pérdida de nitidez, sobre todo en texto o líneas finas.
+            <span class="tooltip-guia">Ligero: 20&#8209;30 &nbsp; Normal: 40 &nbsp; Impresión: 60&#8209;80</span>
+          </span>
+        </label>
+        <input id="rangoCalidad" type="range" min="1" max="100" value="40" />
+        <span id="valorCalidad">40</span>
+      </div>
+
+      <label class="etiqueta">Ruta de salida (opcional)</label>
+      <div class="fila-carpeta">
+        <input id="txtRutaSalida" type="text" readonly placeholder="Vacio = misma carpeta (carpeta raiz o la primera, si agregaste varias)" />
+        <button id="btnRutaSalida" class="secundario">...</button>
+      </div>
+    </div>
+
+    <div class="barra-progreso" id="barraProgreso">
+      <div class="barra-progreso-relleno" id="barraProgresoRelleno"></div>
+    </div>
+    <div id="lblEstado" class="estado">Preparado.</div>
+
+    <div class="fila-final">
+      <button id="btnConvertir" class="primario">Convertir a PDF</button>
+      <button id="btnSalir" class="secundario">Salir</button>
+    </div>
+
+    <div class="credito">
+      Hecho por <a id="lnkCredito" href="#">✿ S H I M U R A ✿</a>
+    </div>
+  </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
