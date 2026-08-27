@@ -14,6 +14,16 @@ normalizacion a JPEG con la calidad elegida) la hace `sharp`
 legitimas (VS Code, Slack, Discord, y el propio YT-DLP Minimalist).
 El armado del PDF lo hace `pdf-lib` (tambien npm, sin binarios externos).
 
+## Seguridad
+
+Ambos archivos fueron analizados en VirusTotal y salieron limpios:
+
+- Instalador: 0/66 detecciones — [Ver resultado](https://www.virustotal.com/gui/file/77688c07e0642d1ee3e5bc510612d03231a9822f49e1397ec69b7d0b4e263526?nocache=1)
+- 
+- Portable: 0/68 detecciones — [Ver resultado](https://www.virustotal.com/gui/file/f78e2325845e75d69c558838c4557e1700608aee01c1e4d71b0c1a34d88764b1)
+
+Nota: el .exe no tiene firma digital de código (certificado de pago), así que Windows SmartScreen puede mostrar una advertencia la primera vez que lo ejecutes ("Windows protegió tu PC"). Es normal en apps sin firmar y no significa que el archivo esté infectado — puedes verificarlo tú mismo en los links de VirusTotal de arriba. Para continuar, haz clic en "Más información" → "Ejecutar de todas formas".
+
 
 ## Funciones incluidas (igual que la version PowerShell)
 
