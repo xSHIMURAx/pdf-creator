@@ -1,5 +1,7 @@
 # ConvertidorPDF (Electron)
 
+![Vista principal](screenshots/Principal.png)
+
 Reescritura completa de `ConvertidorPDF.ps1` (PowerShell + Windows Forms) a
 Electron, con la misma estructura de proyecto que YT-DLP Minimalist
 (`src/main.js`, `src/preload.js`, `src/renderer.js`, `src/index.html`).
