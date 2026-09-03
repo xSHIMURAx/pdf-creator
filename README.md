@@ -1,6 +1,6 @@
 # PDF Creator (Electron)
 
-![Vista principal](Screenshots/Principal.png)
+![Vista principal](screenshots/Principal.png)
 
 
 
