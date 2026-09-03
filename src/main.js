@@ -7,6 +7,12 @@ const sharp = require('sharp');
 const AdmZip = require('adm-zip');
 const { PDFDocument } = require('pdf-lib');
 
+// Fuerza el nombre visible de la app (y con esto la carpeta de datos en
+// %AppData%\Roaming) a "PDF Creator" en vez de tomar el "name" de
+// package.json (convertidor-pdf, el nombre viejo del proyecto). Debe
+// llamarse antes de que la app este "ready" para que afecte a userData.
+app.setName('PDF Creator');
+
 const EXTENSIONES_IMAGEN = ['.jpg', '.jpeg', '.png', '.webp', '.avif', '.bmp'];
 // .rar/.cbr se soportan si hay 7-Zip o WinRAR instalados (ver buscarExtractorRar)
 const EXTENSIONES_COMPRIMIDO = ['.zip', '.cbz', '.rar', '.cbr'];
@@ -52,7 +58,7 @@ function esWindows11Acrylic() {
 //                 si el build no lo soporta, cae a 'mica' y si tampoco a 'none')
 // Si el build de Windows no soporta el nivel pedido, se hace fallback al
 // nivel mas fuerte que si soporte (ver aplicarNivelDesenfoque).
-const NIVEL_DESENFOQUE_POR_DEFECTO = 'ninguno';
+const NIVEL_DESENFOQUE_POR_DEFECTO = 'acrilico';
 
 // ================= Configuracion persistente (transparencia/desenfoque) =================
 // Se guarda en un config.json dentro de la carpeta de datos de la app
@@ -63,7 +69,7 @@ function rutaConfig() {
   if (!script_rutaConfig) script_rutaConfig = path.join(app.getPath('userData'), 'config.json');
   return script_rutaConfig;
 }
-const CONFIG_POR_DEFECTO = { transparencia: 80, nivelDesenfoque: NIVEL_DESENFOQUE_POR_DEFECTO };
+const CONFIG_POR_DEFECTO = { transparencia: 50, nivelDesenfoque: NIVEL_DESENFOQUE_POR_DEFECTO };
 
 function cargarConfiguracion() {
   try {
@@ -114,7 +120,7 @@ function crearVentana() {
   const configGuardada = cargarConfiguracion();
   mainWindow = new BrowserWindow({
     width: 650,
-    height: 925,
+    height: 933,
     resizable: false,
     maximizable: false,
     show: false,

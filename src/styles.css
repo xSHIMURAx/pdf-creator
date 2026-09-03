@@ -329,7 +329,7 @@ button.chico { padding: 4px 10px; font-size: 12px; }
 .estado.estado-error { color: #f87171; font-weight: 600; }
 .fila-final { display: flex; gap: 10px; margin-top: 2px; }
 .fila-final button { flex: 1; padding: 10px 14px; }
-.credito { text-align: center; font-size: 12px; color: rgba(240, 240, 244, 0.55); margin-top: -2px; }
+.credito { text-align: center; font-size: 12px; color: rgba(240, 240, 244, 0.55); margin-top: 10px; }
 .credito a { color: #4dabf7; text-decoration: none; cursor: pointer; }
 .credito a:hover { text-decoration: underline; }
 
